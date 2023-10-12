@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DZ_4._5.AddItemPage"
+             Title="Додавання товару"
+             Padding="10, 10, 10, 10">
+    <ScrollView>
+        <StackLayout>
+        <Label Text="Оберіть тип товару:" />
+        <Picker x:Name="ItemTypePicker" SelectedIndexChanged="ItemTypePicker_SelectedIndexChanged">
+            <Picker.Items>
+                <x:String>Продукт</x:String>
+                <x:String>Книга</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Entry Placeholder="Назва товару" x:Name="NameEntry" />
+        <Entry Placeholder="Ціна в UAH" x:Name="PriceEntry" />
+        <Entry Placeholder="Країна походження" x:Name="CountryEntry" />
+        <Label Text="Дата пакування" />
+        <DatePicker Format="yyyy-MM-dd" x:Name="PackagingDateDatePicker" />
+        <Entry Placeholder="Опис" x:Name="DescriptionEntry" />
+
+        <Label Text="Термін придатності" x:Name="ExpirationDateEntryText" IsVisible="False"/>
+        <DatePicker Format="yyyy-MM-dd" x:Name="ExpirationDateEntryPicker" IsVisible="False" />
+        <Entry Placeholder="Кількість" x:Name="QuantityEntry" IsVisible="False" />
+        <Entry Placeholder="Одиниця виміру" x:Name="UnitOfMeasureEntry" IsVisible="False" />
+
+        <Entry Placeholder="Кількість сторінок" x:Name="PageCountEntry" IsVisible="False" />
+        <Entry Placeholder="Видавництво" x:Name="PublisherEntry" IsVisible="False" />
+        <StackLayout x:Name="AuthorsStackLayout" IsVisible="False">
+            <Label Text="Оберіть авторів:" />
+        </StackLayout>
+
+            <Button Text="Додати" x:Name="AddButton" FontFamily="Impact" FontSize="Medium" TextColor="Black" BackgroundColor="LimeGreen" Clicked="AddButton_Clicked" IsEnabled="False"/>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

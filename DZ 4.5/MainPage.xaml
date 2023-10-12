@@ -1,0 +1,118 @@
+﻿<!-- MainPage.xaml -->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DZ_4._5.MainPage"
+             Title="Товари"
+             Padding="10, 10, 10, 10">
+
+    <StackLayout>
+
+        <Label Padding="10,10,10,10" Text="Продукти" FontAttributes="Italic,Bold"  FontFamily="Georgia" TextColor="MediumPurple" FontSize="Title" HorizontalOptions="Center" />
+        <ListView x:Name="ProductsListView" ItemsSource="{Binding Products}">
+            <ListView.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="0.8*" />
+                        <ColumnDefinition Width="1.15*" />
+                        <ColumnDefinition Width="1.15*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="1.15*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Padding="10,10,10,10" Text="Назва" Grid.Column="0" BackgroundColor="LightGray" />
+                    <Label Padding="10,10,10,10" Text="Ціна в UAH" Grid.Column="1" BackgroundColor="LightGray" />
+                    <Label Padding="10,10,10,10" Text="Країна походження" Grid.Column="2" BackgroundColor="LightGray" />
+                    <Label Padding="10,10,10,10" Text="Дата пакування" Grid.Column="3" BackgroundColor="LightGray" />
+                    <Label Padding="10,10,10,10" Text="Опис" Grid.Column="4" BackgroundColor="LightGray" />
+                    <Label Padding="10,10,10,10" Text="Термін придатності" Grid.Column="5" BackgroundColor="LightGray" />
+                    <Label Padding="10,10,10,10" Text="Кількість" Grid.Column="6" BackgroundColor="LightGray" />
+                    <Label Padding="10,10,10,10" Text="Одиниця виміру" Grid.Column="7" BackgroundColor="LightGray" />
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*" />
+                                <ColumnDefinition Width="0.8*" />
+                                <ColumnDefinition Width="1.15*" />
+                                <ColumnDefinition Width="1.15*" />
+                                <ColumnDefinition Width="0.6*" />
+                                <ColumnDefinition Width="1.15*" />
+                                <ColumnDefinition Width="0.6*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Padding="10,10,10,10" Text="{Binding Name}" Grid.Column="0" />
+                            <Label Padding="10,10,10,10" Text="{Binding Price}" Grid.Column="1" />
+                            <Label Padding="10,10,10,10" Text="{Binding CountryOfOrigin}" Grid.Column="2" />
+                            <Label Padding="10,10,10,10" Text="{Binding PackagingDate}" Grid.Column="3" />
+                            <Label Padding="10,10,10,10" Text="{Binding Description}" Grid.Column="4" />
+                            <Label Padding="10,10,10,10" Text="{Binding ExpirationDate}" Grid.Column="5" />
+                            <Label Padding="10,10,10,10" Text="{Binding Quantity}" Grid.Column="6" />
+                            <Label Padding="10,10,10,10" Text="{Binding UnitOfMeasure}" Grid.Column="7" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Label Text="Книги" Padding="10,10,10,10" FontAttributes="Italic,Bold" FontFamily="Georgia" TextColor="MediumPurple" FontSize="Title" HorizontalOptions="Center" />
+        <ListView x:Name="BooksListView" ItemsSource="{Binding Books}">
+            <ListView.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="0.8*" />
+                        <ColumnDefinition Width="1.15*" />
+                        <ColumnDefinition Width="1.15*" />
+                        <ColumnDefinition Width="0.6*" />
+                        <ColumnDefinition Width="1.15*" />
+                        <ColumnDefinition Width="0.8*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Padding="10,10,10,10" Text="Назва" Grid.Column="0" BackgroundColor="LightGray"/>
+                    <Label Padding="10,10,10,10" Text="Ціна в UAH" Grid.Column="1" BackgroundColor="LightGray"/>
+                    <Label Padding="10,10,10,10" Text="Країна походження" Grid.Column="2" BackgroundColor="LightGray"/>
+                    <Label Padding="10,10,10,10" Text="Дата пакування" Grid.Column="3" BackgroundColor="LightGray"/>
+                    <Label Padding="10,10,10,10" Text="Опис" Grid.Column="4" BackgroundColor="LightGray"/>
+                    <Label Padding="10,10,10,10" Text="Кількість сторінок" Grid.Column="5" BackgroundColor="LightGray"/>
+                    <Label Padding="10,10,10,10" Text="Видавництво" Grid.Column="6" BackgroundColor="LightGray"/>
+                    <Label Padding="10,10,10,10" Text="Перелік авторів" Grid.Column="7" BackgroundColor="LightGray"/>
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*" />
+                                <ColumnDefinition Width="0.8*" />
+                                <ColumnDefinition Width="1.15*" />
+                                <ColumnDefinition Width="1.15*" />
+                                <ColumnDefinition Width="0.6*" />
+                                <ColumnDefinition Width="1.15*" />
+                                <ColumnDefinition Width="0.8*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Padding="10,10,10,10" Text="{Binding Name}" Grid.Column="0" />
+                            <Label Padding="10,10,10,10" Text="{Binding Price}" Grid.Column="1" />
+                            <Label Padding="10,10,10,10" Text="{Binding CountryOfOrigin}" Grid.Column="2" />
+                            <Label Padding="10,10,10,10" Text="{Binding PackagingDate}" Grid.Column="3" />
+                            <Label Padding="10,10,10,10" Text="{Binding Description}" Grid.Column="4" />
+                            <Label Padding="10,10,10,10" Text="{Binding PageCount}" Grid.Column="5" />
+                            <Label Padding="10,10,10,10" Text="{Binding Publisher}" Grid.Column="6" />
+                            <Label Padding="10,10,10,10" Text="{Binding SelectedAuthors}" Grid.Column="7" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Text="Додати товар" FontFamily="Impact" FontSize="Medium" TextColor="Black" BackgroundColor="LimeGreen" Clicked="AddItemButton_Clicked" />
+
+        <Button Text="Видалити товар" FontFamily="Impact" FontSize="Medium" TextColor="Black" BackgroundColor="Red" Clicked="RemoveItemButton_Clicked" />
+    </StackLayout>
+</ContentPage>
